@@ -1,0 +1,14 @@
+{% set collection = page.collection() %}
+
+{% block body_content %}
+  {% if collection | length %}
+    {% for item in collection %}
+      {% set image = item.media.images | first %}
+
+      <article class="item thumb" data-width="{{ item.header.width | default(400) }}">
+        <h2>{{ item.title }}</h2>
+        <a href="{{ image.url }}"><img src="{{ image.resize(0, 212).url }}" alt="{{ item.slug }}" /></a>
+      </article>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

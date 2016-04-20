@@ -1,0 +1,18 @@
+name: Parallelism
+version: 2.0.2
+description: "A responsive portfolio site template with unique horizontal page scrolling."
+icon: binoculars
+author:
+  name: Sommerregen
+  email: sommerregen@benjamin-regler.de
+  url: benjamin-regler.de
+homepage: https://github.com/sommerregen/grav-theme-parallelism
+demo: http://themes.benjamin-regler.de/parallelism/
+keywords: [theme, onepage, responsive, html5, css3, jquery, portfolio]
+docs: https://github.com/sommerregen/grav-theme-parallelism/blob/master/README.md
+bugs: https://github.com/sommerregen/grav-theme-parallelism/issues
+license: MIT/GPL
+
+form:
+  validation: strict
+  fields:

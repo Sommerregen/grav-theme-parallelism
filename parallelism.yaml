@@ -1,0 +1,17 @@
+enabled: true
+
+# Social Links (use a value with full url)
+social_links:
+  twitter: "#"
+  instagram: "#"
+  facebook: "#"
+  dribbble: "#"
+  pinterest: "#"
+
+# Grav streams
+streams:
+  schemes:
+    theme:
+      type: ReadOnlyStream
+      paths:
+        - user/themes/parallelism

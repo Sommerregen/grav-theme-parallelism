@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+      {% block head_meta %}
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        {% for meta in page.metadata %}
+          <meta {% if meta.name %}name="{{ meta.name }}" {% endif %}{% if meta.http_equiv %}http-equiv="{{ meta.http_equiv }}" {% endif %}{% if meta.charset %}charset="{{ meta.charset }}" {% endif %}{% if meta.property %}property="{{ meta.property }}" {% endif %}{% if meta.content %}content="{{ meta.content }}" {% endif %}/>
+        {% endfor %}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="{{ site.metadata.description }}" />
+      {% endblock %}
+
+      {% block head_title %}
+        <title>{% if page.header.title and (page.url != base_url or 'error' == page.template) %}{{ page.header.title }} | {% endif %}{{ site.title }}</title>
+      {% endblock %}
+
+      <link rel="canonical" href="{{ page.url(true) }}" />
+      <link rel="shortcut icon" href="{{ url('theme://assets/images/favicon.ico') }}" />
+
+      <script>
+        var base_url = '{{ base_url }}',
+            theme_url = '{{ theme_url }}';
+      </script>
+
+      {% block head_js %}
+        {% do assets.add('theme://assets/js/jquery.min.js', 103) %}
+        {% do assets.add('theme://assets/js/jquery.poptrox.min.js', 102) %}
+        {% do assets.add('theme://assets/js/skel.min.js', 101) %}
+        {% do assets.add('theme://assets/js/init.js', 100) %}
+
+        {# HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries #}
+        {# WARNING: Respond.js doesn't work if you view the page via file:// #}
+        {% if browser.getBrowser == 'msie' and browser.getVersion >= 8 and browser.getVersion <= 9 %}
+          {% do assets.add('https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js') %}
+          {% do assets.add('https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js') %}
+        {% endif %}
+
+        {{ assets.js() }}
+      {% endblock %}
+
+      {% block head_css %}
+        <noscript>
+          <link rel="stylesheet" href="{{ url('theme://assets/css/skel.css') }}" />
+          <link rel="stylesheet" href="{{ url('theme://assets/css/style.css') }}" />
+          <link rel="stylesheet" href="{{ url('theme://assets/css/style-desktop.css') }}" />
+          <link rel="stylesheet" href="{{ url('theme://assets/css/style-noscript.css') }}" />
+        </noscript>
+
+        {% if browser.getBrowser == 'msie' and browser.getVersion <= 9 %}
+          {% do assets.add('theme://assets/css/ie/v8.css') %}
+        {% endif %}
+
+        {{ assets.css() }}
+      {% endblock %}
+
+      {% block head_css_extra %}{% endblock %}
+    {% endblock %}
+  </head>
+
+  {% block body %}<body>{% endblock %}
+    <div id="wrapper">
+
+      <div id="main">
+        <div id="reel">
+
+          {% block body_header %}
+            <div id="header" class="item" data-width="{{ page.header.width | default(400) }}">
+              <div class="inner">
+                <h1>{{ page.title }}</h1>
+                {{ page.content }}
+              </div>
+            </div>
+          {% endblock %}
+
+          {% block body_content %}
+            {{ page.content }}
+          {% endblock %}
+
+        </div>
+      </div>
+
+      {% block body_footer %}
+        <div id="footer">
+          <div class="left">
+            {% block body_copyright %}
+              <p>This is <strong>Parallelism</strong>, a responsive portfolio site template by <a href="http://html5up.net">HTML5 UP</a>.</p>
+              <p>Free for personal and commercial use under the <a href="http://html5up.net/license">Creative Commons Attribution</a> license.</p>
+            {% endblock %}
+          </div>
+
+          <div class="right">
+            {% if theme_config.social_links | length %}
+              <ul class="contact">
+                {% for key, value in theme_config.social_links %}
+                  <li><a href="{{ value }}" class="icon fa-{{ key }}"><span class="label">{{ key }}</span></a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+
+            <ul class="copyright">
+              <li>&copy; {{ "NOW" | date('Y') }} {{ site.title }}</li>
+              <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+              <li>Grav Theme: <a href="https://nunopress.com">NunoPress</a></li>
+            </ul>
+          </div>
+        </div>
+      {% endblock %}
+
+    </div>
+
+    {% block body_js %}
+
+
+    {% endblock %}
+
+  </body>
+</html>

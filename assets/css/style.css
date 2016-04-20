@@ -1,0 +1,188 @@
+@charset 'UTF-8';
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+@import url('font-awesome.min.css');
+
+/*
+	Parallelism by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+/*********************************************************************************/
+/* Basic                                                                         */
+/*********************************************************************************/
+
+	body
+	{
+		position: relative;
+		background-color: #12151D;
+		color: #999;
+		color: rgba(255,255,255,0.6);
+		font-family: 'Source Sans Pro';
+		font-weight: 400;
+	}
+
+	a
+	{
+		color: #fff;
+		color: rgba(255,255,255,0.85);
+		text-decoration: none;
+		-moz-transition: color 0.25s ease-in-out;
+		-webkit-transition: color 0.25s ease-in-out;
+		-o-transition: color 0.25s ease-in-out;
+		-ms-transition: color 0.25s ease-in-out;
+		transition: color 0.25s ease-in-out;
+	}
+	
+		a:hover
+		{
+			color: #d64760;
+		}
+
+	h1,h2,h3,h4,h5,h6
+	{
+		font-weight: 400;
+		color: #fff;
+		letter-spacing: -0.05em;
+	}
+	
+	strong, b
+	{
+		color: #fff;
+		color: rgba(255,255,255,0.85);
+		font-weight: 600;
+	}
+	
+	/* List */
+	
+		ul
+		{
+		}
+
+			ul.contact
+			{
+				cursor: default;
+				margin: 0 0 1em 0;
+			}
+			
+				ul.contact li
+				{
+					display: inline-block;
+					font-size: 1.5em;
+				}
+				
+				ul.contact li span
+				{
+					display: none;
+				}
+				
+				ul.contact li a
+				{
+					opacity: 0.35;
+					color: #fff;
+					-moz-transition: opacity 0.25s ease-in-out;
+					-webkit-transition: opacity 0.25s ease-in-out;
+					-o-transition: opacity 0.25s ease-in-out;
+					-ms-transition: opacity 0.25s ease-in-out;
+					transition: opacity 0.25s ease-in-out;
+				}
+				
+					ul.contact li a:hover
+					{
+						opacity: 1.0;
+					}
+	
+	/* Item */
+
+		.item
+		{
+		}
+		
+			.item.thumb
+			{
+				display: block;
+				position: relative;
+				background: #1a1f2c;
+				background: rgba(255,255,255,0.25);
+				cursor: default;
+			}
+			
+				.item.thumb h2
+				{
+					position: absolute;
+					bottom: 0;
+					left: 0;
+					background: #1a1f2c;
+					background: rgba(18,21,29,0.85);
+					width: 100%;
+					padding: 1em;
+					font-weight: 400;
+					line-height: 1em;
+					z-index: 2;
+				}
+				
+				.item.thumb img
+				{
+					display: block;
+					z-index: 1;
+				}
+
+/*********************************************************************************/
+/* Icons                                                                         */
+/*********************************************************************************/
+
+	.icon
+	{
+		position: relative;
+		text-decoration: none;
+	}
+
+		.icon:before
+		{
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+		}
+
+		.icon > .label
+		{
+			display: none;
+		}
+
+/*********************************************************************************/
+/* Wrapper                                                                       */
+/*********************************************************************************/
+
+	#wrapper
+	{
+		position: relative;
+		z-index: 1;
+	}
+	
+/*********************************************************************************/
+/* Main                                                                          */
+/*********************************************************************************/
+
+	#main
+	{
+	}
+	
+/*********************************************************************************/
+/* Header                                                                        */
+/*********************************************************************************/
+
+	#header
+	{
+		position: relative;
+		background: #d64760 url('images/overlay.png');
+		color: #fff;
+		cursor: default;
+	}
+	
+		#header p
+		{
+			opacity: 0.65;
+		}
